@@ -1,33 +1,18 @@
 <?php
 
 //Définition de la classe Entreprise
-class Entreprise {
+class Personne {
 //Attributs
-	public $nom;
-	public $vocation;
+	private $numero;
+	private $nom;
+	private $prenom;
+	private $daten;
 	public $adr;
+	public $ent;
+
 
 //Méthodes et fonctions
 
-	function __construct($nom, $vocation, $adr) {
-		$this->nom = $nom;
-		$this->vocation = $vocation;
-		$this->adr = $adr;
-	}
-}
-
-//Définition de la classe Personne
-class Personne {
-
-//Attributs
-	private $numero1;
-	public $nom1;
-	public $prenom1;
-	public $daten1;
-	public $adr1;
-	public $ent1;
-
-//Méthodes
 	function __construct($numero, $nom, $prenom, $dn, $adr, $ent) {
 		$this->num = $numero;
 		$this->nom = $nom;
@@ -36,10 +21,19 @@ class Personne {
 		$this->adr = $adr;
 		$this->ent = $ent;
 	}
+	public function getNumero() {
+		return $this->numero;
+	}
+	public function getNom() {
+                return $this->nom;
+	}
+ 	public function getPrenom() {
+                return $this->prenom;
+	}
+	 public function getDaten() {
+                return $this->daten;
+        }
 
-	public function __get($num) {
-		return $this->num;
-	} 
 
 	public function afficher() {
 		echo "id : ".$this->num."<br/>";
